@@ -3,7 +3,11 @@ import { NavLink } from "react-router";
 export const navigationItems = [
 	{
 		path: "/",
-		label: "Home",
+		label: "Classic View",
+	},
+	{
+		path: "/horizontal",
+		label: "Horizontal View",
 	},
 ] as const;
 

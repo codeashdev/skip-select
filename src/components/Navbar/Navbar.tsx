@@ -37,12 +37,12 @@ export const Navbar = () => {
 						aria-label="Desktop menu"
 					>
 						<NavigationItems />
-						 <ThemeToggle />
+						<ThemeToggle />
 					</div>
 
 					{/* Mobile menu button and theme toggle */}
 					<div className="flex md:hidden items-center gap-2">
-						 <ThemeToggle />
+						<ThemeToggle />
 						<button
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 							className="p-2 rounded-lg text-secondary hover:text-primary hover:bg-hover transition-colors"

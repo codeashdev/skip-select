@@ -58,7 +58,11 @@ export const StandardCard = ({ skip }: SkipCardProps) => {
 							/>
 						</div>
 
-						<div className="flex-grow" role="group" aria-label="Additional costs">
+						<div
+							className="flex-grow"
+							role="group"
+							aria-label="Additional costs"
+						>
 							<AdditionalCosts
 								transportCost={skip.transport_cost}
 								perTonneCost={skip.per_tonne_cost}

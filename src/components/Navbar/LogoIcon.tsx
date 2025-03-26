@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 
 interface LogoIconProps {
-    className?: string;
+	className?: string;
 }
 
 export const LogoIcon: React.FC<LogoIconProps> = ({ className }) => {
-    return (
-        <svg
-            className={className}
-            viewBox="0 0 548.799 548.799"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-        >
-            <g>
-                <g>
-                    <path
-                        fill="currentColor"
-                        d="M514.652,277.205c0,0,22.054,49.744-17.604,72.174c0,0-15.245,15.263-64.737,10.648
+	return (
+		<svg
+			className={className}
+			viewBox="0 0 548.799 548.799"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlnsXlink="http://www.w3.org/1999/xlink"
+		>
+			<g>
+				<g>
+					<path
+						fill="currentColor"
+						d="M514.652,277.205c0,0,22.054,49.744-17.604,72.174c0,0-15.245,15.263-64.737,10.648
                         l-48.565-84.196l97.137-56.426L514.652,277.205z M344.966,30.585c0,0,25.612,0.737,53.957,46.405l30.857,52.286l21.817-11.781
                         l-22.613,49.431l-22.58,49.453l-53.721-8.219l-53.752-8.225l31.533-17.042L276.361,82.721c0,0-20.738-47.155-58.575-51.971
                         L344.966,30.585z M93.152,454.826L28.682,345.244c0,0-12.335-22.463,12.711-70.006l29.462-53.101l-21.2-12.843l54.085-5.542
@@ -25,9 +25,9 @@ export const LogoIcon: React.FC<LogoIconProps> = ({ className }) => {
                         M213.276,184.576l-95.814-58.654l34.844-57.194c0,0,33.253-43.039,71.843-18.828c0,0,20.686,6.193,40.138,51.935L213.276,184.576
                         z M462.88,465.704c0,0-12.824,22.155-66.472,25.396l-60.695,2.292v24.819l-32.755-43.391l-32.772-43.382l32.772-43.372
                         l32.755-43.382v35.863h113.878c0,0,51.347,4.144,73.562-26.843L462.88,465.704z"
-                    />
-                </g>
-            </g>
-        </svg>
-    );
-}; 
+					/>
+				</g>
+			</g>
+		</svg>
+	);
+};

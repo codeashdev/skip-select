@@ -32,11 +32,18 @@ export const DetailsDrawer = ({
 						{/* Skip Details */}
 						<div className="flex items-start gap-4 bg-background p-4 rounded-lg">
 							<div className="flex-1">
-								<h4 id="drawer-title" className="text-lg font-semibold text-primary">
+								<h4
+									id="drawer-title"
+									className="text-lg font-semibold text-primary"
+								>
 									{skip.size} Yard Skip
 								</h4>
 								<div className="flex items-center gap-2 mt-1 text-secondary">
-									<Calendar size={16} className="text-primary" aria-hidden="true" />
+									<Calendar
+										size={16}
+										className="text-primary"
+										aria-hidden="true"
+									/>
 									<span>{skip.hire_period_days} days hire</span>
 								</div>
 							</div>
@@ -66,7 +73,10 @@ export const DetailsDrawer = ({
 										</span>
 									</div>
 								)}
-								<div className="flex justify-between pt-2 border-t border-border font-medium" role="listitem">
+								<div
+									className="flex justify-between pt-2 border-t border-border font-medium"
+									role="listitem"
+								>
 									<span className="text-primary">Total (inc. VAT)</span>
 									<span className="text-primary text-lg">
 										£{totalPrice.toFixed(2)}
@@ -85,7 +95,7 @@ export const DetailsDrawer = ({
 						>
 							Cancel
 						</button>
-						<button 
+						<button
 							className="flex-1 px-4 py-3 bg-primary text-white rounded-lg cursor-pointer font-medium hover:bg-primary/90 transition-colors"
 							aria-label="Continue with skip selection"
 						>
