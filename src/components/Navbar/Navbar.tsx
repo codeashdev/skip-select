@@ -3,6 +3,7 @@ import { Menu } from "lucide-react";
 import { Logo } from "./Logo";
 import { NavigationItems } from "./NavigationItems";
 import { MobileMenu } from "./MobileMenu";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Navbar = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,10 +37,12 @@ export const Navbar = () => {
 						aria-label="Desktop menu"
 					>
 						<NavigationItems />
+						 <ThemeToggle />
 					</div>
 
 					{/* Mobile menu button and theme toggle */}
 					<div className="flex md:hidden items-center gap-2">
+						 <ThemeToggle />
 						<button
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 							className="p-2 rounded-lg text-secondary hover:text-primary hover:bg-hover transition-colors"
