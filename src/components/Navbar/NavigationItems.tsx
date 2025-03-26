@@ -13,6 +13,10 @@ export const navigationItems = [
 		path: "/glossy",
 		label: "Glossy View",
 	},
+	{
+		path: "/animated",
+		label: "Animated View",
+	},
 ] as const;
 
 interface NavigationItemsProps {
