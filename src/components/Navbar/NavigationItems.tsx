@@ -9,6 +9,10 @@ export const navigationItems = [
 		path: "/horizontal",
 		label: "Horizontal View",
 	},
+	{
+		path: "/glossy",
+		label: "Glossy View",
+	},
 ] as const;
 
 interface NavigationItemsProps {
@@ -33,11 +37,10 @@ export const NavigationItems = ({
 						to={item.path}
 						className={({ isActive }: { isActive: boolean }) => `
                             block px-3 py-2 rounded-lg text-sm font-medium transition-colors
-                            ${
-															isActive
-																? "text-primary bg-hover"
-																: "text-secondary hover:text-primary hover:bg-hover"
-														}
+                            ${isActive
+								? "text-primary bg-hover"
+								: "text-secondary hover:text-primary hover:bg-hover"
+							}
                         `}
 						onClick={onItemClick}
 						role="menuitem"
@@ -62,11 +65,10 @@ export const NavigationItems = ({
 					to={item.path}
 					className={({ isActive }: { isActive: boolean }) => `
                         text-sm font-medium transition-colors
-                        ${
-													isActive
-														? "text-primary"
-														: "text-secondary hover:text-primary"
-												}
+                        ${isActive
+							? "text-primary"
+							: "text-secondary hover:text-primary"
+						}
                     `}
 					role="menuitem"
 					aria-current="page"
