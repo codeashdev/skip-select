@@ -1,0 +1,25 @@
+.light {
+	--color-background: hsl(220, 20%, 98%);
+	--color-card: hsl(0, 0%, 100%);
+	--color-primary: hsl(32, 100%, 50%);
+	--color-secondary: hsl(220, 9%, 35%);
+	--color-tertiary: hsl(220, 9%, 46%);
+	--color-border: hsl(216, 12%, 91%);
+	--color-hover: hsl(220, 14%, 96%);
+	--color-drawer: hsl(0, 0%, 100%);
+	--color-drawer-overlay: hsla(0, 0%, 0%, 0.2);
+	--color-badge: hsla(0, 0%, 100%, 0.95);
+}
+
+.dark {
+	--color-background: hsl(222, 47%, 11%);
+	--color-card: hsl(215, 28%, 17%);
+	--color-primary: hsl(32, 100%, 50%);
+	--color-secondary: hsl(220, 14%, 84%);
+	--color-tertiary: hsl(220, 9%, 65%);
+	--color-border: hsl(222, 15%, 27%);
+	--color-hover: hsl(222, 15%, 27%);
+	--color-drawer: hsl(215, 28%, 17%);
+	--color-drawer-overlay: hsla(0, 0%, 0%, 0.4);
+	--color-badge: hsla(215, 28%, 17%, 0.95);
+}
