@@ -1,12 +1,18 @@
+import { BrowserRouter } from "react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import { ColorPalette } from "./components/ColorPalette/ColorPalette";
 import { Navbar } from "./components/Navbar/Navbar";
 import { ThemeProvider } from "./context/ThemeContext";
 import AppRoutes from "./routes/routes";
-import { BrowserRouter } from "react-router";
+
+
+const queryClient = new QueryClient();
 
 function App() {
 	return (
 		<ThemeProvider>
+				<QueryClientProvider client={queryClient}>
 			<BrowserRouter>
 				<div className="min-h-screen bg-background transition-colors duration-300">
 					<Navbar />
@@ -16,6 +22,7 @@ function App() {
 					<ColorPalette />
 				</div>
 			</BrowserRouter>
+			</QueryClientProvider>
 		</ThemeProvider>
 	);
 }
