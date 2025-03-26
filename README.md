@@ -50,6 +50,63 @@ This combination of modern development practices, thoughtful design choices, and
 - **localStorage** - Persisting user preferences
 - **Biome.js** - Fast and modern formatter and linter for JavaScript/TypeScript
 
+## 🔄 Application Flow & Functionality
+
+### Data Flow
+- **API Integration**
+  - Fetches skip data from a REST API using React Query
+  - Implements automatic caching and background updates
+  - Handles loading and error states gracefully
+  - Provides real-time data synchronization
+
+### Page Structure
+- **Standard Page**
+  - Displays standard skip options in a grid layout
+  - Each skip card shows key information:
+    - Dimensions
+    - Capacity
+    - Price
+    - Availability
+  - Interactive cards with hover effects and click actions
+
+- **Other Pages**
+  - Showcases premium skip options with glossy design
+  - Enhanced card features:
+    - 3D rotation effects
+    - Detailed specifications
+
+### Navigation System
+- **React Router Implementation**
+  - Client-side routing for smooth transitions
+  - No page refreshes during navigation
+  - Maintains state between page changes
+  - Browser history integration
+
+### User Interactions
+- **Skip Selection Process**
+  1. User browses available skip options
+  2. Clicks on a skip card to view details
+  3. Bottom drawer opens with complete information
+  4. User can proceed with selection or continue browsing
+
+- **Theme Customization**
+  1. Color palette selector in the bottom right
+  2. Instant theme changes across the application
+  3. Persistent theme preferences using localStorage
+
+### State Management
+- **React Query for Data**
+  - Manages all API data fetching
+  - Handles caching and invalidation
+  - Provides loading and error states
+  - Optimistic updates for better UX
+
+- **Context for Theme**
+  - Global theme state management
+  - Coordinates color scheme changes
+  - Syncs with system preferences
+  - Persists user choices
+
 ## 🎨 Design System
 
 ### Theme Management
