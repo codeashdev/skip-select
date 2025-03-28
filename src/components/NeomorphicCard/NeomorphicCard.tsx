@@ -40,7 +40,7 @@ export const NeomorphicCard = ({ skip, onClick }: NeomorphicCardProps) => {
         setIsHovered(false);
     };
 
-    const handleClick = (e: React.MouseEvent) => {
+    const handleClick = (_e: React.MouseEvent) => {
         if (!skip.allows_heavy_waste) return;
         document.body.style.overflow = 'hidden';
         onClick();
