@@ -17,6 +17,10 @@ export const navigationItems = [
 		path: "/animated",
 		label: "Animated View",
 	},
+	{
+		path: "/neomorphic",
+		label: "Neomorphic View",
+	},
 ] as const;
 
 interface NavigationItemsProps {

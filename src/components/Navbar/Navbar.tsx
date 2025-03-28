@@ -32,7 +32,7 @@ export const Navbar = () => {
 
 					{/* Desktop navigation */}
 					<div
-						className="hidden md:flex items-center gap-6"
+						className="hidden lg:flex items-center gap-6"
 						role="menubar"
 						aria-label="Desktop menu"
 					>
@@ -41,7 +41,7 @@ export const Navbar = () => {
 					</div>
 
 					{/* Mobile menu button and theme toggle */}
-					<div className="flex md:hidden items-center gap-2">
+					<div className="flex lg:hidden items-center gap-2">
 						<ThemeToggle />
 						<button
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
