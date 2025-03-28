@@ -13,6 +13,11 @@ export const Neomorphic = () => {
         queryFn: () => fetchSkips("NR32", "Lowestoft"),
     });
 
+    const handleCloseDrawer = () => {
+        setSelectedSkip(null);
+        document.body.style.overflow = 'unset';
+    };
+
     return (
         <QueryWrapper query={query}>
             {(skips) => (
@@ -44,7 +49,7 @@ export const Neomorphic = () => {
                     {selectedSkip && (
                         <NeomorphicDrawer
                             skip={selectedSkip}
-                            onClose={() => setSelectedSkip(null)}
+                            onClose={handleCloseDrawer}
                         />
                     )}
                 </>
