@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useTheme } from "../../context/ThemeContext";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { NeomorphicFeature } from "./NeomorphicFeature";
 import { NeomorphicSpecification } from "./NeomorphicSpecification";
 
@@ -40,10 +40,18 @@ export const NeomorphicCard = ({ skip, onClick }: NeomorphicCardProps) => {
         setIsHovered(false);
     };
 
-    const handleClick = () => {
+    const handleClick = (_e: React.MouseEvent) => {
         if (!skip.allows_heavy_waste) return;
+        document.body.style.overflow = 'hidden';
         onClick();
     };
+
+    // Cleanup function to reset body overflow
+    useEffect(() => {
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
 
     // Calculate total price including VAT
     const totalPrice = skip.price_before_vat * (1 + skip.vat / 100);
