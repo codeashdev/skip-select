@@ -1,40 +1,63 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 import { useTheme } from "../../context/ThemeContext";
 
-interface NeomorphicDrawerProps {
-    skip: Skip;
-    onClose: () => void;
-}
+
 
 export const NeomorphicDrawer = ({ skip, onClose }: NeomorphicDrawerProps) => {
     const { theme } = useTheme();
     const totalPrice = skip.price_before_vat * (1 + skip.vat / 100);
 
+    // Add motion values for drag gesture
+    const dragY = useMotionValue(0);
+    const overlayOpacity = useTransform(dragY, [0, 200], [0.3, 0]);
+    const drawerScale = useTransform(dragY, [0, 200], [1, 0.95]);
+
+    // Handle drag end
+    const handleDragEnd = (_e: any, info: { offset: { y: number }, velocity: { y: number } }) => {
+        if (info.offset.y > 100 || info.velocity.y > 500) {
+            onClose();
+        }
+    };
+
     return (
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
             <motion.div
+                key="overlay"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+                style={{ opacity: overlayOpacity }}
+                className="fixed inset-0 bg-black/30 backdrop-blur-[2px] z-50"
                 onClick={onClose}
             >
                 <motion.div
+                    key="drawer"
+                    drag="y"
+                    dragDirectionLock
+                    dragConstraints={{ top: 0, bottom: 200 }}
+                    dragElastic={{ top: 0, bottom: 0.7 }}
+                    onDragEnd={handleDragEnd}
                     initial={{ y: "100%" }}
                     animate={{ y: 0 }}
                     exit={{ y: "100%" }}
-                    transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                    transition={{
+                        type: "spring",
+                        damping: 25,
+                        stiffness: 300,
+                        mass: 0.5
+                    }}
                     onClick={(e) => e.stopPropagation()}
+                    style={{ scale: drawerScale }}
                     className={`
-            absolute bottom-0 left-0 right-0 rounded-t-3xl p-6 shadow-xl
-            ${theme === "light"
+                        absolute bottom-0 left-0 right-0 rounded-t-3xl p-6 shadow-xl touch-pan-y
+                        ${theme === "light"
                             ? "bg-gradient-to-br from-[#f0f0f0] to-[#ffffff] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff]"
                             : "bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] shadow-[20px_20px_60px_#0f0f0f,-20px_-20px_60px_#333333]"
                         }
-          `}
+                    `}
                 >
                     {/* Drawer Handle */}
-                    <div className="w-12 h-1.5 bg-border rounded-full mx-auto mb-6" />
+                    <div className="w-12 h-1.5 bg-border rounded-full mx-auto mb-6 cursor-grab active:cursor-grabbing" />
 
                     <div className="max-w-3xl mx-auto">
                         {/* Header */}

@@ -68,7 +68,7 @@ export const NeomorphicCard = ({ skip, onClick }: NeomorphicCardProps) => {
     return (
         <motion.div
             ref={cardRef}
-            onClick={handleClick}
+
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onHoverStart={() => setIsHovered(true)}
@@ -86,7 +86,7 @@ export const NeomorphicCard = ({ skip, onClick }: NeomorphicCardProps) => {
                     : "bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] shadow-[20px_20px_60px_#0f0f0f,-20px_-20px_60px_#333333]"
                 }
                 transition-all duration-500
-                ${skip.allows_heavy_waste ? "cursor-pointer" : "cursor-not-allowed opacity-75"}
+                ${!skip.allows_heavy_waste && "cursor-not-allowed opacity-75"}
                 group
                 hover:shadow-[inset_-12px_-12px_20px_#ffffff10,inset_12px_12px_20px_#00000080]
             `}
@@ -155,12 +155,13 @@ export const NeomorphicCard = ({ skip, onClick }: NeomorphicCardProps) => {
                     whileHover={{ scale: skip.allows_heavy_waste ? 1.05 : 1 }}
                     whileTap={{ scale: skip.allows_heavy_waste ? 0.95 : 1 }}
                     disabled={!skip.allows_heavy_waste}
+                    onClick={handleClick}
                     className={`
                         w-full py-3 px-4 rounded-xl font-medium text-white
                         bg-gradient-to-r from-primary to-primary/80
                         shadow-[0_10px_20px_-10px] shadow-primary/50
                         hover:shadow-[0_20px_30px_-15px] hover:shadow-primary/50
-                        transition-all duration-300
+                        transition-all duration-300 cursor-pointer
                         ${!skip.allows_heavy_waste ? "opacity-50 cursor-not-allowed" : ""}
                     `}
                 >

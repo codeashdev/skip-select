@@ -11,4 +11,9 @@ interface NeomorphicFeatureProps {
 interface NeomorphicSpecificationProps {
     label: string;
     value: string | number;
-} 
+}
+
+interface NeomorphicDrawerProps {
+    skip: Skip;
+    onClose: () => void;
+}
