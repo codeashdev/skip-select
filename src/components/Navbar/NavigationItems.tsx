@@ -21,6 +21,10 @@ export const navigationItems = [
 		path: "/neomorphic",
 		label: "Neomorphic View",
 	},
+	{
+		path: "/airbnb",
+		label: "Airbnb View",
+	},
 ] as const;
 
 interface NavigationItemsProps {

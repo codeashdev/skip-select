@@ -4,6 +4,7 @@ import { Horizontal } from "@/pages/Horizontal";
 import { Glossy } from "@/pages/Glossy";
 import { Animated } from "@/pages/Animated";
 import { Neomorphic } from "@/pages/Neomorphic";
+import { AirbnbPage } from "@/pages/Airbnb";
 export default function AppRoutes() {
 	return (
 		<Routes>
@@ -13,6 +14,7 @@ export default function AppRoutes() {
 				<Route path="glossy" element={<Glossy />} />
 				<Route path="animated" element={<Animated />} />
 				<Route path="neomorphic" element={<Neomorphic />} />
+				<Route path="airbnb" element={<AirbnbPage />} />
 			</Route>
 		</Routes>
 	);
